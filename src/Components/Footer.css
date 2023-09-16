@@ -2,8 +2,13 @@
     width: 25px;
     height: 25px;
     padding: 10px;
+    background-color: black;
 }
 
 footer {
     width: 100%;
+}
+
+footer img {
+    background-color: white;
 }

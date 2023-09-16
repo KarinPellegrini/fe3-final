@@ -38,7 +38,7 @@ a:hover {
 
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   padding: 2rem;
   position: relative;
@@ -69,12 +69,10 @@ form {
 
 .card {
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
   width: 200px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
+  flex-direction: column-reverse;
 }
 
 .card:hover {

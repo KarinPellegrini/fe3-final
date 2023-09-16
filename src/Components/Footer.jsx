@@ -10,7 +10,7 @@ const Footer = () => {
         <img src="/src/public/images/ico-facebook.png" alt="Facebook" />
         <img src="/src/public/images/ico-instagram.png" alt="Instagram" />
         <img src="/src/public/images/ico-tiktok.png" alt="TikTok" />
-        <img src="images/ico-whatsapp.png" alt="WhatsApp" />
+        <img src="/src/public/images/ico-whatsapp.png" alt="WhatsApp" />
       </div>
     </footer>
   )
