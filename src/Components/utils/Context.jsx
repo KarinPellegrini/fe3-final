@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {createContext, useContext, useState, useReducer, useEffect} from 'react'
+import { createContext, useContext, useState, useReducer, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 const CharStates = createContext()
@@ -7,13 +7,13 @@ const CharStates = createContext()
 const reducer = (state, action) => {
     switch (action.type) {
         case 'GET_CHARS':
-            return {...state, chars: action.payload}
+            return { ...state, chars: action.payload }
         case 'GET_CHAR':
-            return {...state, char: action.payload}
+            return { ...state, char: action.payload }
         case 'ADD_FAV':
-            return {...state, favs: [...state.favs, action.payload]}
+            return { ...state, favs: [...state.favs, action.payload] }
         case 'SWITCH_THEME':
-            return {...state, theme: !state.theme}
+            return { ...state, theme: !state.theme }
         default:
             throw new Error()
     }
@@ -29,26 +29,27 @@ const initialState = {
     theme: true,
 }
 
-const Context = ({children}) => {
+const Context = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
     const url = 'https://jsonplaceholder.typicode.com/users'
 
     useEffect(() => {
         axios(url)
-        .then(res => {
-            console.log(res.data)
-            dispatch({type: 'GET_CHARS', payload: res.data})})
-        .catch(err => console.log(err))
+            .then(res => {
+                console.log(res.data)
+                dispatch({ type: 'GET_CHARS', payload: res.data })
+            })
+            .catch(err => console.log(err))
     }, [])
 
     useEffect(() => {
         localStorage.setItem('favs', JSON.stringify(state.favs))
     }, [state.favs])
-    
 
-    return(
-        <CharStates.Provider value={{dispatch, state}}>
+
+    return (
+        <CharStates.Provider value={{ dispatch, state }}>
             {children}
         </CharStates.Provider>
     )

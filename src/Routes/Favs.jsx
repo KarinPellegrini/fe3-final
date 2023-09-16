@@ -6,7 +6,7 @@ import { useCharStates } from "../Components/utils/Context";
 // Este componente deberá ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Favs = () => {
-  const {state} = useCharStates();
+  const { state } = useCharStates();
   return (
     <>
       <h1>Dentists Favs</h1>
