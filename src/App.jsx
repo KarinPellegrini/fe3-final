@@ -18,16 +18,18 @@ function App() {
   };
 
   return (
-  <div className="App" style={themeStyles}>
-    <Navbar/>
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/detail/:id' element={<Detail/>}/> 
-      <Route path='/favs' element={<Favs/>}/>
-      <Route path='/contact' element={<Contact/>}/>
-    </Routes>
-    <Footer/>
-  </div>
+    <div className="App" >
+      <Navbar />
+      <div style={themeStyles}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/detail/:id' element={<Detail />} />
+          <Route path='/favs' element={<Favs />} />
+          <Route path='/contact' element={<Contact />} />
+        </Routes>
+        <Footer />
+      </div>
+    </div>
   );
 }
 

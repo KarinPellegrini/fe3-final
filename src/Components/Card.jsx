@@ -12,9 +12,9 @@ const Card = ({ char }) => {
   }
 
   const linkStyles = {
-    color: state.theme ? 'white' : 'black', // Cambia el color del texto del enlace
-    textDecoration: 'none', // Quita la subrayado predeterminado de los enlaces
+    color: state.theme ? 'white' : 'black'
   };
+
 
   return (
     <div>
