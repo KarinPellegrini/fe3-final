@@ -31,7 +31,12 @@ const Form = (props) => {
     }
 
     return (
-        <form onSubmit={validar}>
+        <form onSubmit={validar} style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 14,
+            padding: "20px"
+        }}>
             <label htmlFor="nombre">Nombre y Apellido </label>
             <input
                 type="text"
@@ -53,7 +58,7 @@ const Form = (props) => {
                 value={telefono}
                 onChange={(e) => setTelefono(e.target.value)}
             />
-            <button type="submit"> ENVIAR </button>
+            <button type="submit" > ENVIAR </button>
             {mensaje ? <p className="mensaje"> {mensaje} </p> : null}
         </form>
     );

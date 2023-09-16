@@ -16,7 +16,7 @@ const Contact = () => {
 
     return (
       <div >
-        <div>
+        <div >
           <h2>¿NECESITAS MÁS INFORMACION?</h2>
           <p>Dejanos tus datos y te contactaremos</p>
           <Form agregar={handleSubmit} />
