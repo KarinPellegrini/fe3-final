@@ -24,7 +24,7 @@ const Card = ({ char }) => {
     <div>
       <div className="card">
         <Link to={'/detail/' + char.id} style={linkStyles}>
-          <img src='../../public/images/doctor.jpg' alt="Foto doctor" />
+          <img src='../public/images/doctor.jpg' alt="Foto doctor" />
           <h3>{char.name}</h3>
           <h4>{char.username}</h4>
           <h5>{char.id}</h5>
