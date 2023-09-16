@@ -1,25 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCharStates } from "./utils/Context";
 
 const Card = ({ char }) => {
-
-  const { dispatch, state } = useCharStates()
-
+  const { dispatch, state } = useCharStates();
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   const addFav = () => {
-    dispatch({ type: 'ADD_FAV', payload: char })
+    dispatch({ type: 'ADD_FAV', payload: char });
+    setShowConfirmation(true);
+
+
+    setTimeout(() => {
+      setShowConfirmation(false);
+    }, 3000);
   }
 
   const linkStyles = {
     color: state.theme ? 'white' : 'black'
   };
 
-
   return (
     <div>
-      <div className="card" >
-        {/* En cada card deberan mostrar en name - username y el id */}
+      <div className="card">
         <Link to={'/detail/' + char.id} style={linkStyles}>
           <img src='public/images/doctor.jpg' alt="Foto doctor" />
           <h3>{char.name}</h3>
@@ -29,8 +32,13 @@ const Card = ({ char }) => {
 
         <button onClick={addFav} className="favButton">⭐</button>
       </div>
-    </div>
 
+      {showConfirmation && (
+        <div className="confirmationPopup">
+          Se agregó el doctor a tus favoritos
+        </div>
+      )}
+    </div>
   );
 };
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useCharStates } from '../Components/utils/Context'
 
@@ -22,8 +21,6 @@ const Detail = () => {
   return (
     <>
       <h1>Detail Dentist id </h1>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
       <table>
         <thead>
           <tr>

@@ -7,7 +7,7 @@ const Home = () => {
   const { state } = useCharStates()
 
   return (
-    <div>
+    <div className='card-grid'>
       {state.chars.map(char => <Card char={char} key={char.id} />)}
     </div>
   )
